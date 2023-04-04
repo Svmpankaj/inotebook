@@ -6,17 +6,18 @@ import About from './components/About';
 import NoteState from './context/notes/NoteState';
 
 
-
 function App() {
   return (
     <>
       <NoteState>
         <BrowserRouter>
           <Navbar />
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/about' element={<About />} />
-          </Routes>
+          <div className="container">
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/about' element={<About />} />
+            </Routes>
+          </div>
         </BrowserRouter>
       </NoteState>
     </>
