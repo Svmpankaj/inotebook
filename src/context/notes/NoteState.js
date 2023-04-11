@@ -4,7 +4,7 @@ import NoteContext from "./noteContext";
 const NoteState = (props) => {
     const notesInitial = [
         {
-            "_id": "6427c8b7163c4cdda50eb1c6",
+            "_id": "6427c8b7163c4cdda510eb1c6",
             "user": "64259f0e5a0656cc18df2ad2",
             "title": "New note",
             "description": "Please access the playlist",
@@ -13,7 +13,7 @@ const NoteState = (props) => {
             "__v": 0
         },
         {
-            "_id": "642f087b7b5af1256752e9f0",
+            "_id": "642f087b7b5af21256752e9f0",
             "user": "64259f0e5a0656cc18df2ad2",
             "title": "New blog",
             "description": "Please write your blogs",
@@ -22,7 +22,7 @@ const NoteState = (props) => {
             "__v": 0
         },
         {
-            "_id": "642f089d7b5af1256752e9f2",
+            "_id": "642f089d7b5a4f1256752e9f2",
             "user": "64259f0e5a0656cc18df2ad2",
             "title": "New music",
             "description": "Please play new song",
@@ -31,7 +31,7 @@ const NoteState = (props) => {
             "__v": 0
         },
         {
-            "_id": "6427c8b7163c4cdda50eb1c6",
+            "_id": "6427c8b7163c4c5dda50eb1c6",
             "user": "64259f0e5a0656cc18df2ad2",
             "title": "New note",
             "description": "Please access the playlist",
@@ -40,7 +40,7 @@ const NoteState = (props) => {
             "__v": 0
         },
         {
-            "_id": "642f087b7b5af1256752e9f0",
+            "_id": "642f087b7b5af12576752e9f0",
             "user": "64259f0e5a0656cc18df2ad2",
             "title": "New blog",
             "description": "Please write your blogs",
@@ -49,7 +49,7 @@ const NoteState = (props) => {
             "__v": 0
         },
         {
-            "_id": "642f089d7b5af1256752e9f2",
+            "_id": "642f089d7b5af12567592e9f2",
             "user": "64259f0e5a0656cc18df2ad2",
             "title": "New music",
             "description": "Please play new song",
