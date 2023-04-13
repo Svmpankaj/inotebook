@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-
 const Navbar = () => {
-    let location = useLocation();
+    // let location = useLocation();
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
