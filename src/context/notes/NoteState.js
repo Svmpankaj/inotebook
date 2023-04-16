@@ -7,7 +7,6 @@ const NoteState = (props) => {
     const [notes, setNotes] = useState(notesInitial);
 
     // Get all Notes
-    // Add a note
     const getNotes = async () => {
         // API Call
         const response = await fetch(`${host}/api/notes/fetchallnotes`, {
@@ -76,7 +75,7 @@ const NoteState = (props) => {
     const editNote = async (id, title, description, tag) => {
         // API Call
         const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
-            method: "POST",
+            method: "PUT",
             headers: {
                 "Content-Type": "application/json",
                 "auth-token":
