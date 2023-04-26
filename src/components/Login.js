@@ -18,7 +18,7 @@ function Login() {
             body: JSON.stringify({ email: credentials.email, password: credentials.password })
         });
         const json = await response.json();
-        console.log(json);
+        // console.log(json);
 
         if (json.success) {
             // Save the auth token and redirect
@@ -46,6 +46,7 @@ function Login() {
                     <label htmlFor="password" className="form-label">Password</label>
                     <input type="password" className="form-control" value={credentials.password} onChange={onChange} name='password' id="password" />
                 </div>
+
                 <button type="submit" className="btn btn-primary" >Submit</button>
             </form>
         </div>
