@@ -20,11 +20,11 @@ router.post('/createuser',
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
         }
-        // Check whether user with this email exists already
         try {
+            // Check whether user with this email exists already
             let user = await User.findOne({ email: req.body.email });
             if (user) {
-                return res.status(404).json({ error: "Sorry a user with this email is already exists" })
+                return res.status(400).json({ error: "Sorry a user with this email is already exists" })
             }
             const salt = await bcrypt.genSalt(10);
             const secPass = await bcrypt.hash(req.body.password, salt);
@@ -32,8 +32,8 @@ router.post('/createuser',
             // Create a new
             user = await User.create({
                 name: req.body.name,
-                email: req.body.email,
                 password: secPass,
+                email: req.body.email,
             })
 
             const data = {
@@ -54,10 +54,10 @@ router.post('/createuser',
     })
 
 // ROUTE 2:  Authenticate a User using: POST "/api/auth/login". No login required
-router.post('/login', [
+router.post('/login',
     body('email').isEmail().withMessage('Enter a valid email'),
-    body('password').isLength({ min: 3 }).withMessage('Password Cannot be blank'),
-],
+    body('password').isLength({ min: 3 }).withMessage('Password Cannot be blank').exists(),
+
     async (req, res) => {
 
         let success = false
@@ -66,8 +66,8 @@ router.post('/login', [
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
         }
-        const { email, password } = req.body;
 
+        const { email, password } = req.body;
         try {
             let user = await User.findOne({ email });
             if (!user) {
