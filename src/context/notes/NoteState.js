@@ -14,7 +14,7 @@ const NoteState = (props) => {
             headers: {
                 "Content-Type": "application/json",
                 "auth-token":
-                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQyNTlmMGU1YTA2NTZjYzE4ZGYyYWQyIn0sImlhdCI6MTY4MDE5Nzk1OX0.RCfwIy_uzOm0_wGbUY9DtFxyaWFymgL49YVdc8GSMt4",
+                    localStorage.getItem('token'),
             }
         });
         const json = await response.json()
@@ -31,7 +31,7 @@ const NoteState = (props) => {
             headers: {
                 "Content-Type": "application/json",
                 "auth-token":
-                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQyNTlmMGU1YTA2NTZjYzE4ZGYyYWQyIn0sImlhdCI6MTY4MDE5Nzk1OX0.RCfwIy_uzOm0_wGbUY9DtFxyaWFymgL49YVdc8GSMt4",
+                    localStorage.getItem('token'),
             },
             body: JSON.stringify({ title, description, tag }),
         });
@@ -48,10 +48,11 @@ const NoteState = (props) => {
             headers: {
                 "Content-Type": "application/json",
                 "auth-token":
-                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQyNTlmMGU1YTA2NTZjYzE4ZGYyYWQyIn0sImlhdCI6MTY4MDE5Nzk1OX0.RCfwIy_uzOm0_wGbUY9DtFxyaWFymgL49YVdc8GSMt4",
+                    localStorage.getItem('token'),
             }
         });
         const json = await response.json();
+        console.log(json)
         const newNotes = notes.filter((note) => {
             return note._id !== id;
         });
@@ -66,11 +67,12 @@ const NoteState = (props) => {
             headers: {
                 "Content-Type": "application/json",
                 "auth-token":
-                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQyNTlmMGU1YTA2NTZjYzE4ZGYyYWQyIn0sImlhdCI6MTY4MDE5Nzk1OX0.RCfwIy_uzOm0_wGbUY9DtFxyaWFymgL49YVdc8GSMt4",
+                    localStorage.getItem('token'),
             },
             body: JSON.stringify({ title, description, tag }),
         });
         const json = await response.json();
+        console.log(json)
 
         //to Update a front end
         getNotes();
